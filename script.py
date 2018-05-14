@@ -58,7 +58,7 @@ def main() :
                                             # Iterate over folder, depth 6
                                             for folder_06 in os.listdir(os.path.join(path, folder_01, folder_02, folder_03, folder_04, folder_05)) :
                                                 # Don't copy Mac files
-                                                if not folder_06 in ['Thumbs.db'] and not os.path.exists(os.path.join(path, folder_01, folder_03_new_name, folder_05, folder_06)):
+                                                if not folder_06 in ['Thumbs.db'] :
                                                     shutil.move(os.path.join(path, folder_01, folder_02, folder_03, folder_04, folder_05, folder_06), os.path.join(path, folder_01, folder_03_new_name, folder_05))
                     shutil.rmtree(os.path.join(path, folder_01, folder_02))
 
