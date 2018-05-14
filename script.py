@@ -16,7 +16,7 @@ import shutil
 #
 log_file = 'script.log'
 log_level = logging.DEBUG
-path = '/Users/anne/Downloads/archelec'
+path = '/media/annelhote/ANNELHOTE/archelec/ArchivesArchElec'
 folder_splitator = '_'
 
 
@@ -42,7 +42,8 @@ def main() :
                         if not os.path.isfile(os.path.join(path, folder_01, folder_02, folder_03)) and folder_03.startswith('EL') :
                             # Rename folder from XXX to XXX
                             folder_03_new_name = folder_splitator.join(folder_03.split(folder_splitator)[1:])
-                            os.mkdir(os.path.join(path, folder_01, folder_03_new_name))
+                            if not os.path.exists(os.path.join(path, folder_01, folder_03_new_name)) :
+                                os.mkdir(os.path.join(path, folder_01, folder_03_new_name))
                             # Iterate over folder, depth 4
                             for folder_04 in os.listdir(os.path.join(path, folder_01, folder_02, folder_03)) :
                                 # If it is a folder
